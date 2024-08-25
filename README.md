@@ -176,3 +176,36 @@ Preprocessing steps performed before modeling:
 Further analysis can be found in the accompanying notebook.
 
 ## **7. Conclusion & Recommendation**
+
+**Conclusion**
+In the dataset , we found several features that proved to stand out for having a significant deposit conversion rate :
+- Poutcome (Success) = If the outcome of the previous campaign was successful, there is a higher chance compared to other outcomes that the person will deposit
+- Job (Student) = If the occupation is student , there is a higher chance compared to other occupation that the person will deposit
+
+While our black box model considers these features to have the most significant impact on its decision making :
+- nr.employed = if the value is low , the model will be more inclined to predict deposit
+- Euribor3M = if the value is low , the model will be more inclined to predict depost
+
+Through our process, we identified Gradient Boosting Machine with Random Over Sampling as the best algorithm for this project, achieving an AUC score of 0.804.
+
+The optimal threshold for prediction is 0.47, meaning that if the predicted probability is 0.47 or higher, the model will classify the client as likely to make a deposit.
+
+The model demonstrates a false positive rate of 16.54% and a solid true positive rate of 65%.
+
+To simplify, when tested on the data, our model successfully identified two-thirds of all clients who made a deposit, while contacting less than a quarter of all clients on the list.
+
+**Recommendation**
+Here are some recommendations to maximize business performance :
+- ⁠Try to prioritize people whose outcome was successful on the previous campaign since they have the highest conversion rate.
+- Also try to focus on those whose occupation is student and retired since they have high conversion rate.
+- ⁠Focus on university degree since they have high chance of accepting the offer and high numbers,
+- ⁠People whose age above 60 also have high chance of accepting the offer.
+- ⁠If the Euribor3M value is below 1.2 , the offer will generally be accepted. beware of that momentum, as people will more likely to deposit
+- ⁠During October, September, December and March, people have tendency to accept the offer. Try to increase the calling effort and increase reach during that time.
+- ⁠People who don't experience credit card default generally have 2 times higher chance of accepting the offer than those who do. Try focusing on the first than the latter.
+- ⁠Generally if the number of employees is below 5100 they have higher chance of accepting the offer. so beware of them.
+
+Possible improvements :
+- Future projects could benefit from deeper feature engineering, such as interaction terms or polynomial features, to capture more complex relationships.
+- Other algorithms like CatBoost, or deep learning models could be explored to see if they offer superior performance.
+- While the project includes a basic cost analysis, future projects could expand this to include a full cost-benefit analysis considering long-term customer retention and potential up-selling or cross-selling opportunities
